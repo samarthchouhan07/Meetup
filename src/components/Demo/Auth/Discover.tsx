@@ -7,15 +7,15 @@ export const Discover:React.FC=()=>{
   const navigate=useNavigate();
     return (
         <div className="sticky top-0 bg-white w-full shadow-md py-4 px-6">
-          <div className="border-b border-gray-500 pb-4">
+          <div className="pb-4">
             <h2 className="text-black font-medium text-3xl font-serif w-full sm:w-120 sm:text-xl">
               Discover
             </h2>
-            <div className="my-2 flex items-center gap-3 flex-wrap">
+            <div className="my-2 grid grid-cols-6  items-center gap-3 flex-wrap">
               {discover.map((item, i) => (
                 <button
                   onClick={()=>navigate(`/filter/${item.toLocaleLowerCase()}`)}
-                  className="bg-gray-200 rounded-full px-3 py-1 text-sm hover:underline focus:outline-none focus:ring focus:ring-blue-400"
+                  className="bg-gray-200 hover:shadow-md hover:shadow-blue-500 rounded-full px-3 py-1 text-sm hover:underline focus:outline-none focus:ring focus:ring-blue-400"
                   key={i}
                 >
                   {item}

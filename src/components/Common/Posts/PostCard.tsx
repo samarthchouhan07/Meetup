@@ -5,7 +5,6 @@ import { SavedPost } from './Actions/SavedPost';
 import { Blog } from '../../../Context/Context';
 import { Actions } from './Actions/Actions';
 import { useNavigate } from 'react-router-dom';
-
 export interface Post {
   title:string
   desc:string
