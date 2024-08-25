@@ -18,7 +18,7 @@ export const readTime=(desc:DescObject)=>{
    return Math.ceil(words.length / averageReading);
 }
 
-export const formatNumber=(num)=>{
+export const formatNumber=(num:any)=>{
    if(num>=1e9){
        return (num/1e9).toFixed(1)+"K"
    }else if(num>=1e6){

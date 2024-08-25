@@ -6,7 +6,7 @@ import { readTime } from "../../../utils/helper";
 export const Trending:React.FC=()=>{
     const {postData}=Blog();
     const getTrending=postData && postData?.sort((a,b)=>b.pageViews-a.pageViews)
-    return <div className="border-b border-gray-600">
+    return <section className="border-b border-gray-600">
        <div className="size py-[2rem]">
            <div className="flex items-center gap-3 font-semibold">
               <span>
@@ -20,15 +20,16 @@ export const Trending:React.FC=()=>{
             ))}
            </div>
        </div>
-    </div>
+    </section>
 }
+
 
 interface Trend_props{
     trend:{
         title:string
         created:Date
         desc:string
-        postId:string
+        id:string
     }
     index:number
 }
@@ -37,7 +38,7 @@ const Trend:React.FC<Trend_props>=({trend,index})=>{
     return <main className="flex gap-4 w-full">
         <span className="text-gray-400 text-4xl mt-4">{index+1}</span>
         <div className="py-6 flex flex-col gap-3">
-           <div onClick={()=>navigate(`/post/${trend.postId}`)} className="flex flex-col gap-4 cursor-pointer">
+           <div onClick={()=>navigate(`/post/${trend.id}`)} className="flex flex-col gap-4 cursor-pointer">
               <p className="w-full md:w-[18rem] text-sm font-bold line-clamp-2 hover:text-blue-500 hover:underline decoration-blue-500">{trend.title}</p>
               <p>{moment(trend?.created).format("DD/MM/YYYY ")}
                  {readTime({__html:trend.desc})} min read.

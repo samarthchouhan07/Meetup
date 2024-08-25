@@ -6,7 +6,7 @@ export const Home:React.FC=()=>{
     <div className="flex-1 py-10 mb-16">
       <Posts />
     </div>
-    <div className="flex-1 md:flex-none md:w-84 p-7 border-l border-gray-300">
+    <div className="md:w-84 p-7 border-l border-gray-300 hidden md:block">
       <h3>Here are your mates.!</h3>
       <Follow />
     </div>

@@ -74,9 +74,9 @@ export const Auth:React.FC<{modal:boolean,setModal:React.Dispatch<React.SetState
         </div>
     </>
     ):signreq==="sign-in"?(
-        <Signin setSignReq={setSignreq}/>
+        <Signin/>
      ):signreq==="sign-up"?(
-        <Signup setSignReq={setSignreq} setModal={setModal}/>
+        <Signup setModal={setModal}/>
      ):null}
         </div>
             <div>

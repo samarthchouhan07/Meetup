@@ -81,7 +81,7 @@ export const Comment:React.FC<Comment_prop>=({comment,postId})=>{
                         <button onClick={()=>setDrop(!drop)} className="text-2xl hover:bg-green-200 hover:rounded-full">
                             <BiDotsHorizontalRounded/>
                         </button>
-                        <DropDown showDrop={drop}  setShowDrop={setDrop} size="w-[10rem]">
+                        <DropDown showDrop={drop} size="w-[10rem]">
                             <Button click={editComment_function} title="Edit"/>
                             <Button click={removeComment} title="Delete"/>
                         </DropDown>

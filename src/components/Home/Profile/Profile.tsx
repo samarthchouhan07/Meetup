@@ -5,7 +5,6 @@ import { ProfileLists } from "./Activities/ProfileLists"
 import { Modal } from "../../../utils/Modal"
 import { AiOutlineClose } from "react-icons/ai"
 import Profile_img from "../../../../public/profile.jpg"
-import { IoSettingsSharp } from "react-icons/io5"
 import { EditProfile } from "./EditProfile"
 import { Blog } from "../../../Context/Context"
 import { useParams } from "react-router-dom"
@@ -38,7 +37,7 @@ export const Profile:React.FC=()=>{
     <section className="flex flex-col -mt-8 md:flex-row md:space-x-8 py-10 md:py-16 px-4 md:px-8 lg:px-12">
       <div className="flex-1">
         <div className="flex mt-10 flex-col gap-4">
-          <h2 className="text-3xl sm:text-5xl italic font-bold">
+          <h2 className="text-xl sm:text-3xl italic font-bold">
             {getUserData?.username}
           </h2>
           <div className="flex gap-3">
@@ -66,17 +65,11 @@ export const Profile:React.FC=()=>{
           ))}
         </div>
         <currentActive.comp getUserData={getUserData} setEditModal={setEditModal} />
-        <button
-          onClick={() => setModal(true)}
-          className="fixed top-32 right-0 w-8 h-8 md:hidden"
-        >
-          <IoSettingsSharp />
-        </button>
       </div>
       <div className="relative md:w-1/3">
         <Modal modal={modal} setModal={setModal}>
              <div
-          className={`flex-1 w-full border-l border-gray-400 p-8 z-1 fixed right-0 bottom-0 top-0  bg-white md:sticky ${
+          className={`z-60 flex-1 w-full border-l border-gray-400 p-8 z-1 fixed right-0 bottom-0 top-0  bg-white md:sticky ${
             modal ? "translate-x-0" : "translate-x-[100%] md:translate-x-0"
           }`}
         >

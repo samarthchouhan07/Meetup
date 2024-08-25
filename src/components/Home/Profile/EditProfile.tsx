@@ -7,6 +7,7 @@ import { toast } from "react-toastify"
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage"
 import { db, storage } from "../../../firebase/firebase"
 import { doc, updateDoc } from "firebase/firestore"
+import { Loading } from "../../Loading/Loading"
 
 
 interface UserData {
@@ -93,6 +94,9 @@ export const EditProfile: React.FC<{ getUserData: UserData | null, editModal: an
               <LiaTimesSolid />
             </button>
           </div>
+          <div className="flex items-center justify-center">
+                {loading && <Loading/>}
+            </div>
           <section className="mt-6">
             <div className="flex gap-8">
               <div className="w-20">

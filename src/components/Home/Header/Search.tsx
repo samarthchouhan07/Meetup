@@ -1,14 +1,19 @@
 import { useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import { Blog } from "../../../Context/Context";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useLocation } from "react-router-dom";
 export const Search:React.FC=()=>{
     const [search,setSearch]=useState("");
-    const {postData}=Blog();
+    const {postData,currentUser}=Blog();
     const searchData=postData && postData?.filter((post)=>post.title.toLowerCase().includes(search.toLocaleLowerCase()))
     const navigate=useNavigate();
-
-    return <div className="absolute sm:relative right-4 left-4 top-20 sm:left-0 sm:top-0 ">
+    const location = useLocation();
+    const isWriteRoute = location.pathname === "/write" || location.pathname === `/profile/${currentUser?.uid}`
+    if (isWriteRoute) {
+        return null;
+      }
+    
+    return <div className="absolute mt-1 mb-2 sm:relative right-4 left-4 top-20 sm:left-0 sm:top-0 w-full">
                 <div className="flex z-10 ml-2 w-80 items-center gap-1 bg-gray-100 px-2 rounded-full relative">
                     <span className="text-2xl text-gray-400">
                         <CiSearch/>

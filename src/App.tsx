@@ -30,7 +30,3 @@ export const App:React.FC=()=>{
       </>
   );
 };
-//1:09:41
-
-
-

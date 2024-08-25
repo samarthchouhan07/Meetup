@@ -8,7 +8,7 @@ import {auth} from "../../../firebase/firebase"
 import { useNavigate } from "react-router-dom";
 import { Loading } from "../../Loading/Loading";
 
-export const Signin:React.FC<{setSignReq:React.Dispatch<React.SetStateAction<any>>}>=({setSignReq})=>{
+export const Signin:React.FC=()=>{
     const navigate=useNavigate();
     const [loading,setLoading]=useState(false);
     const [form,setForm]=useState({

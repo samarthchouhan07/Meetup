@@ -45,7 +45,7 @@ export const Actions:React.FC<PostCardProps>=({postId,title,desc})=>{
         <button onClick={handleClick}>
            <BsThreeDots className="text-2xl "/>
         </button>
-        <DropDown showDrop={showDrop} setShowDrop={setShowDrop} size="w-[7rem]">
+        <DropDown showDrop={showDrop} size="w-[7rem]">
             <Button click={handleEdit} title="Edit Story"></Button>
             <Button click={handleRemove} title="Delete Story"></Button>
         </DropDown>

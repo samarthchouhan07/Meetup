@@ -1,11 +1,10 @@
-import React, { useEffect, useRef } from "react"
+
 interface  DropDownProps{
     children:React.ReactNode
     size?:string
     showDrop:boolean
-    setShowDrop:React.Dispatch<React.SetStateAction<any>>
 }
-export const DropDown:React.FC<DropDownProps>=({children,size,showDrop,setShowDrop})=>{
+export const DropDown:React.FC<DropDownProps>=({children,size,showDrop})=>{
     return <div>
         {showDrop && (
       <div className={`shadow flex flex-col absolute right-0 top-[2rem] bg-white ${size}`}>

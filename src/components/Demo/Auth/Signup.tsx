@@ -11,10 +11,10 @@ import { Loading } from "../../Loading/Loading";
 
 
 interface SignUpInterface{
-    setSignReq:React.Dispatch<React.SetStateAction<any>>,setModal:React.Dispatch<React.SetStateAction<any>>
+   setModal:React.Dispatch<React.SetStateAction<any>>
 }
 
-export const Signup: React.FC<SignUpInterface> = ({ setSignReq, setModal }) => {
+export const Signup: React.FC<SignUpInterface> = ({ setModal }) => {
     const [loading,setLoading]=useState(false)
     const SignUpSchema = object({
         username: string(),

@@ -22,7 +22,7 @@ export const SharePost:React.FC=()=>{
         <button onClick={()=>setShowDrop(!showDrop)} className="flex items-center justify-center gap-1 hover:font-bold hover:text-green-600">
            <CgShare/> Share
         </button>
-        <DropDown showDrop={showDrop} setShowDrop={setShowDrop} size="w-[12rem]">
+        <DropDown showDrop={showDrop} size="w-[12rem]">
            <Button click={copyLink} title="Copy link" icon={<BiLink/>}></Button>
            <TwitterShareButton url={path}>
               <Button title="Share on Twitter" icon={<FaTwitter/>}></Button>
